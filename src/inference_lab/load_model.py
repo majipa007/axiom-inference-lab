@@ -52,6 +52,11 @@ class Load_Model:
         self.model.to(device=self.device)
         self.model.eval()
 
+    def get_model(self):
+        self.load_model_from_code()
+        return self.model
+
+
     def forward_pass(self):
         self.load_model_from_code()
         x = torch.tensor([[1, 2, 3]], device=self.device)
